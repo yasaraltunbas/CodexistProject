@@ -1,7 +1,15 @@
-package com.project.Repository;
+package com.project.CodexistProject.repository;
+
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.project.Entity.Places;
-public interface PlacesJpaRepository extends JpaRepository<Places, String>{
+import com.project.CodexistProject.entity.PlaceDbEntity;
 
+public interface PlacesJpaRepository extends JpaRepository<PlaceDbEntity, Integer>{
+
+	
+	
+
+	List<PlaceDbEntity> findByLatAndLongiAndRadius(double latitude, double longitude, int radius);
 }
